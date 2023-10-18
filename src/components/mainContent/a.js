@@ -2,7 +2,7 @@ import React from 'react';
 
 function ComponenteA({ object }) {
   return (
-    <div className="room">
+    <div className="main">
       <h2>{object.type}</h2>
       {object.other && (<h2>{object.other}</h2>)}
     </div>

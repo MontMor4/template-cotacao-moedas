@@ -20,6 +20,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 1%;
 }
 
 .top-right {
@@ -28,13 +29,8 @@ body, html {
   line-height: 0;
 }
 
-.logo {
-  max-width: 200px;
-  height: auto;
-}
-
 .logo img {
-  max-width: 100%;
+  max-width: 200px;
   height: auto;
 }
 
@@ -73,42 +69,42 @@ body, html {
 }
 
 .secao2 {
-  display: flex;
-  justify-content: center;
-  text-align: left;
-  margin: 2em auto;
-  
-  .componenteA {
-    border-bottom: 1px solid #ccc; /* Adiciona uma linha de 1 pixel de espessura, cinza claro */
-    padding-bottom: 10px; /* Adiciona um espaço entre as linhas e o conteúdo */
-    margin-bottom: 10px; /* Adiciona um espaço entre as linhas */
-  }
-
-  .rooms, .other-services, .informations {
-    margin: 0em 4em;
-  }
-
-  h1 {
-    font-size: 2em;
-    margin-bottom: 1em;
-  }
-
-  h3 {
-    flex-grow: 1;
-    margin-right: 1em;
-  }
-
-  .transcript {
-    color: $secondary-color;
-  }
-
-  .room {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1em;
+    justify-content: center;
+    text-align: left;
+    margin: 2em auto;
+    
+    .componenteA {
+      border-bottom: 1em solid #ccc; /* Adiciona uma linha de 1 pixel de espessura, cinza claro */
+      padding-bottom: 10em; /* Adiciona um espaço entre as linhas e o conteúdo */
+      margin-bottom: 10em; /* Adiciona um espaço entre as linhas */
+    }
+  
+    .rooms, .other-services, .informations {
+      margin: 0em 4em;
+    }
+  
+    h1 {
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
+  
+    h3 {
+      flex-grow: 1;
+      margin-right: 1em;
+    }
+  
+    .transcript {
+      color: $secondary-color;
+    }
+  
+    .main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1em;
+    }
   }
-}
 
 .line {
   width: 100%;
