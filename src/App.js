@@ -1,8 +1,6 @@
 import React from 'react';
 import './App.scss';
 
-//const request = require('request');
-
 import Logo from './components/top/logo';
 import TopLeft from './components/top/topLeft';
 import TopRight from './components/top/topRight';
@@ -10,7 +8,7 @@ import ComponenteA from './components/mainContent/a';
 import BottomLeft from './components/bottom/bottomLeft';
 import BottomRight from './components/bottom/bottomRight';
 
-//import ObtemMoedas from './scripts/obtemMoedas.js';
+import converterMoedas from './scripts/converterMoedas';
 
 const rooms = [
   {type: 'Luxo', other: "R$ 250,00"},
@@ -24,10 +22,17 @@ const others = [
   {type: 'Jantar', other: "R$ 60,00"},
 ];
 
-const cotacaoMoedas = [
-  {type: 'Dólar', other: "R$ 5,35"},
-  {type: 'Euro', other: "R$ 6,35"},
-];
+const moedas = ['usd', 'eur'];
+let cotacaoMoedas = [];
+ 
+const atualizarCotacaoMoedas = async () => {
+  converterMoedas(moedas)
+  .then(result => cotacaoMoedas = result)
+  .catch(error => console.error(error.message));
+}
+
+atualizarCotacaoMoedas();
+setInterval(atualizarCotacaoMoedas, 30 * 60 * 1000);
 
 function TopSection() {
   return (
@@ -68,7 +73,7 @@ function MainSection() {
         <div className="informations">
           <h1>INFORMAÇÕES</h1>
           <h3 className="transcript">INFORMATIONS</h3>
-          {cotacaoMoedas.map((cotacaoMoeda) => (
+          { cotacaoMoedas.map((cotacaoMoeda) => (
             <React.Fragment key={cotacaoMoeda.type}>
               <ComponenteA object={cotacaoMoeda} />
               <hr className="line" />
