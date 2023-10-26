@@ -1,11 +1,9 @@
-import React from 'react';
-
-function BottomLeft() {
-    return (
-        <div className="bottom-left">
-          <h2>Cobramos 5% de ICSS</h2>
-        </div>
-      );
+function BottomLeft({ text }) {
+  return (
+    <div className="bottom-left">
+      <h2>{text}</h2>
+    </div>
+  );
 }
 
 export default BottomLeft;

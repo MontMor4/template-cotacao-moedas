@@ -1,12 +1,15 @@
-// src/index.js
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App.js';
+import App from './App';
+
+import ThemeContextParent from './contexts/context';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeContextParent>
+      <App />
+    </ThemeContextParent>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );

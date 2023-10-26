@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+![DSPLAY - Digital Signage](https://developers.dsplay.tv/assets/images/dsplay-logo.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# DSPLAY - Flight information
+- Template to display a flight information.
 
-## Available Scripts
+## Supported Screen Formats/Resolutions
 
-In the project directory, you can run:
+- Landscape
 
-### `npm start`
+  ![Landscape](docs/screenshots/landscape.png)
+- Portrait
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  ![Portrait](docs/screenshots/portrait.png)
+- Square
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  ![Square](docs/screenshots/square.png)
 
-### `npm test`
+### Configuration
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This template has some configuration variables as the following table shows:
 
-### `npm run build`
+| Variable              | Type    | Default    | Description                                        |
+|-----------------------|---------|------------| ---------------------------------------------------|
+| `theme`            | object   | { primaryColor, secondaryColor, lineColor }       | template colors                                  |
+| `logoPicture` | text   | "https://www.urlExample.com" | logo picture |
+| `aiirlineInformation`          | object   | { airportName, lastUpdate, departureOrArrivals, planePicture, logoPicure, flights }    | arline information and flight list    |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Theme {...}
+| Variable              | Type    | Default    | Description                                        |
+|-----------------------|---------|------------| ---------------------------------------------------|
+| `primaryColor`        | text   | ""    | primary color    |
+| `secondaryColor`        | text   | ""    | secondary color    |
+| `lineColor`        | text   | ""    | line color    |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Airline information [...]
+|Attributes             | Type    | Example    | Description                                        |
+|-----------------------|---------|------------| ---------------------------------------------------|
+| `airportName`         | text   | "F.Noronha"    | flight list    |
+| `lastUpdate`          | text   | "2024-01-01T02:30"    | datetime, iso format    |
+| `departuresOrArrivals`| text   | "Departures"    | Departure or Arrival information    |
+| `planePicture`        | text   | "up" or "down"    | plane picture    |
+| `flights`  | list   | [{ destination, flight, airline, departureTime, gate, status }]    | flight list and their informations    |
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Flights [...]
+|Attributes             | Type    | Example    | Description                                        |
+|-----------------------|---------|------------| ---------------------------------------------------|
+| `destination`          | text   | "Nashville"    | destinations.                                |
+| `flight`          | text   | "0000"    | flight number    |
+| `airline`          | text   | "https://www.urlExample.com"    | image link    |
+| `departureTime`          | text   | "2023-06-05T10:16"    | datetime, iso format    |
+| `gate`          | text   | "Term B - 52"    | gate description    |
+| `status`          | text   | "on time"    | flight status    |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Getting started
+```
+  git clone https://github.com/dsplay/template-flight-information.git my-awesome-template
+  cd my-awesome-template
+  rm -rf .git
+  npm install
+  npm start
+```
 
-## Learn More
+## Packing (release build)
+  To create a release build of the template, ready to be uploaded to DSPLAY, just run:
+  ```
+    npm run zip
+  ```
+  It will generate a template.zip file ready to be deployed to [DSPLAY Web Manager](https://manager.dsplay.tv/template/create)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## More
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The see more about DSPLAY HTML Templates, visit: https://developers.dsplay.tv/docs/html-templates

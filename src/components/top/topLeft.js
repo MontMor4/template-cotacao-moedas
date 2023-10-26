@@ -1,10 +1,11 @@
-// src/components/top/topLeft.js
-import React from 'react';
-
-function TopLeft() {
+function TopLeft({ text }) {
   return (
     <div className="top-left">
-      <h1>Bem Vindo <br/> Welcome</h1>
+      <h1>
+        {text.title}
+        <br />
+        {text.subtitle}
+      </h1>
     </div>
   );
 }
