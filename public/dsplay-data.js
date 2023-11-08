@@ -20,18 +20,18 @@ var dsplay_media = {
   // custom media parameters
   // customMediaParam: "value",
   mainContent1: {
-    title: "HOTEL",
-    subtitle: "TRANSCRIPT",
+    title: "QUARTOS",
+    subtitle: "ROOMS",
     options: [
-      { type: "Quarto", other: "R$ 200,00" },
-      { type: "Banheiro", other: "R$ 50,00" },
-      { type: "Cozinha", other: "R$ 20,00" },
+      { type: "Solteiro", other: "R$ 200,00" },
+      { type: "Casal", other: "R$ 300,00" },
+      { type: "Quádruplo", other: "R$ 500,00" },
     ],
   },
 
   mainContent2: {
-    title: "OUTROS",
-    subtitle: "TRANSCRIPT",
+    title: "SERVIÇOS",
+    subtitle: "SERVICES",
     options: [
       { type: "Café", other: "R$ 25,00" },
       { type: "Almoço", other: "R$ 40,00" },
@@ -61,4 +61,5 @@ var dsplay_template = {
   // logo: "../test-assets/dsplay-logo.png",
   // title: "My Super Template",
   // expanded: "false",
+  logo: '../test-assets/dsplay-logo.png',
 };

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useMedia } from '@dsplay/react-template-utils';
+import { useMedia, useTemplateVal } from '@dsplay/react-template-utils';
 import './App.scss';
 
 import Logo from './components/top/logo';
@@ -14,6 +14,7 @@ import { ThemeContext } from './contexts/context';
 
 function App() {
   const { globalTheme } = useContext(ThemeContext);
+  const logo = useTemplateVal('logo');
 
   const media = useMedia();
 
@@ -50,7 +51,7 @@ function App() {
     return (
       <section className="secao1">
         <TopLeft text={topLeftText} />
-        <Logo />
+        <Logo img={logo} />
         <TopRight />
       </section>
     );
@@ -105,7 +106,7 @@ function App() {
   }
 
   return (
-    <div style={{ backgroundColor: globalTheme.backgroundColor, color: globalTheme.primaryColor }}>
+    <div style={{ backgroundColor: globalTheme.backgroundColor, color: globalTheme.primaryColor }} className="app">
       <TopSection />
       <MainSection />
       <BottomSection />

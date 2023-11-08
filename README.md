@@ -1,7 +1,7 @@
 ![DSPLAY - Digital Signage](https://developers.dsplay.tv/assets/images/dsplay-logo.png)
 
-# DSPLAY - Flight information
-- Template to display a flight information.
+# DSPLAY - Currency Exchange Rate
+- Template to display currency exchange rate and other informations.
 
 ## Supported Screen Formats/Resolutions
 
@@ -21,9 +21,14 @@ This template has some configuration variables as the following table shows:
 
 | Variable              | Type    | Default    | Description                                        |
 |-----------------------|---------|------------| ---------------------------------------------------|
-| `theme`            | object   | { primaryColor, secondaryColor, lineColor }       | template colors                                  |
-| `logoPicture` | text   | "https://www.urlExample.com" | logo picture |
-| `aiirlineInformation`          | object   | { airportName, lastUpdate, departureOrArrivals, planePicture, logoPicure, flights }    | arline information and flight list    |
+| `topLeftText`            | object   | { title, subtitle }       | Text located in the top left section of the page   
+| `mainContent1`            | object   | { title, subtitle, options }       | First table of contents on the main section                                  |
+| `mainContent2`            | object   | { title, subtitle, options }       | Second table of contents on the main section                                  |
+| `mainContent3`            | object   | { title, subtitle, currencies }       | Last table of contents on the main section, containing the currencies rate                                  |
+| `logo` | text   | "https://www.urlExample.com" | logo picture |
+| `bottomLeftText` | text   | "Bottom Left Text" | Text located in the bottom left section of the page |
+| `bottomRightText` | text   | "Bottom Right Text" | Text located in the bottom right section of the page |
+
 
 Theme {...}
 | Variable              | Type    | Default    | Description                                        |

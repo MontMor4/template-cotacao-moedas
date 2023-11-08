@@ -1,7 +1,7 @@
-function Logo() {
+function Logo({ img }) {
   return (
     <div className="logo">
-      <img src="imgs/logoTeste.png" alt="Logo" />
+      <img src={img} alt="Logo" />
     </div>
   );
 }
