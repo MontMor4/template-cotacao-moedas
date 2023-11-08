@@ -35,5 +35,6 @@ module.exports = {
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
     "react/jsx-filename-extension": "off",
+    "linebreak-style": ["error", "windows"],
     },
 };

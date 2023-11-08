@@ -15,10 +15,7 @@ var dsplay_config = {
 };
 
 var dsplay_media = {
-  // for json service based media
-  // result: { "validity": "2018-08-13T18:22:55.238Z", "showOutdated": true, "data": {} },
-  // custom media parameters
-  // customMediaParam: "value",
+
   mainContent1: {
     title: "QUARTOS",
     subtitle: "ROOMS",

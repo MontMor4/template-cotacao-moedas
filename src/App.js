@@ -1,7 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useMedia, useTemplateVal } from '@dsplay/react-template-utils';
+import {
+  useMedia,
+  useTemplateVal,
+  Loader,
+  useScreenInfo,
+} from '@dsplay/react-template-utils';
 import './App.scss';
-
 import Logo from './components/top/logo';
 import TopLeft from './components/top/topLeft';
 import TopRight from './components/top/topRight';
@@ -11,13 +15,20 @@ import BottomRight from './components/bottom/bottomRight';
 
 import converterMoedas from './scripts/converterMoedas';
 import { ThemeContext } from './contexts/context';
+import Intro from './components/intro';
 
 function App() {
   const { globalTheme } = useContext(ThemeContext);
   const logo = useTemplateVal('logo');
-
+  const { screenFormat } = useScreenInfo();
   const media = useMedia();
+  const MIN_LOADING_DURATION = 2800;
 
+  // fonts to preload
+  // @font-face's must be defined in fonts.sass or another in-use style file
+  const fonts = [
+    'Roboto Condensed',
+  ];
   const {
     topLeftText,
     mainContent1,
@@ -106,11 +117,17 @@ function App() {
   }
 
   return (
-    <div style={{ backgroundColor: globalTheme.backgroundColor, color: globalTheme.primaryColor }} className="app">
-      <TopSection />
-      <MainSection />
-      <BottomSection />
-    </div>
+    <Loader
+      placeholder={<Intro />}
+      fonts={fonts}
+      minDuration={MIN_LOADING_DURATION}
+    >
+      <div style={{ backgroundColor: globalTheme.backgroundColor, color: globalTheme.primaryColor }} className={`app fade-in ${screenFormat}`}>
+        <TopSection />
+        <MainSection />
+        <BottomSection />
+      </div>
+    </Loader>
   );
 }
 
