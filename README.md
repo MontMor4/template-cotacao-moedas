@@ -24,45 +24,44 @@ This template has some configuration variables as the following table shows:
 | `topLeftText`            | object   | { title, subtitle }       | Text located in the top left section of the page   
 | `mainContent1`            | object   | { title, subtitle, options }       | First table of contents on the main section                                  |
 | `mainContent2`            | object   | { title, subtitle, options }       | Second table of contents on the main section                                  |
-| `mainContent3`            | object   | { title, subtitle, currencies }       | Last table of contents on the main section, containing the currencies rate                                  |
-| `logo` | text   | "https://www.urlExample.com" | logo picture |
+| `mainContent3`            | object   | { title, subtitle, currencies }       | Last table of contents on the main section, containing the currency exchange rate                                  |
+| `logo` | text   | "https://www.urlExample.com" | Logo picture |
 | `bottomLeftText` | text   | "Bottom Left Text" | Text located in the bottom left section of the page |
 | `bottomRightText` | text   | "Bottom Right Text" | Text located in the bottom right section of the page |
 
 
-Theme {...}
+mainContent1 [...]
 | Variable              | Type    | Default    | Description                                        |
 |-----------------------|---------|------------| ---------------------------------------------------|
-| `primaryColor`        | text   | ""    | primary color    |
-| `secondaryColor`        | text   | ""    | secondary color    |
-| `lineColor`        | text   | ""    | line color    |
+| `title`        | text   | ""    | Title   |
+| `subtitle`        | text   | ""    | Subtitle    |
+| `options`        | array   | ""    | Array of objects, each one containing 'type' (title) and 'other' (value). Eg.: { type: "Coffee", other: "R$ 25,00" }    |
+
+mainContent2 [...]
+| Variable              | Type    | Default    | Description                                        |
+|-----------------------|---------|------------| ---------------------------------------------------|
+| `title`        | text   | ""    | Title   |
+| `subtitle`        | text   | ""    | Subtitle    |
+| `options`        | array   | ""    | Array of objects, each one containing 'type' (title) and 'other' (value). Eg.: { type: "Coffee", other: "R$ 25,00" }    |
+
+mainContent3 [...]
+| Variable              | Type    | Default    | Description                                        |
+|-----------------------|---------|------------| ---------------------------------------------------|
+| `title`        | text   | ""    | Title   |
+| `subtitle`        | text   | ""    | Subtitle    |
+| `currencies`        | array   | ""    | Array of strings. All possible currencies in "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/brl.json". Eg.: currencies: ["usd", "eur"]   |
 
 
-Airline information [...]
+topLeftText [...]
 |Attributes             | Type    | Example    | Description                                        |
 |-----------------------|---------|------------| ---------------------------------------------------|
-| `airportName`         | text   | "F.Noronha"    | flight list    |
-| `lastUpdate`          | text   | "2024-01-01T02:30"    | datetime, iso format    |
-| `departuresOrArrivals`| text   | "Departures"    | Departure or Arrival information    |
-| `planePicture`        | text   | "up" or "down"    | plane picture    |
-| `flights`  | list   | [{ destination, flight, airline, departureTime, gate, status }]    | flight list and their informations    |
-
-
-
-Flights [...]
-|Attributes             | Type    | Example    | Description                                        |
-|-----------------------|---------|------------| ---------------------------------------------------|
-| `destination`          | text   | "Nashville"    | destinations.                                |
-| `flight`          | text   | "0000"    | flight number    |
-| `airline`          | text   | "https://www.urlExample.com"    | image link    |
-| `departureTime`          | text   | "2023-06-05T10:16"    | datetime, iso format    |
-| `gate`          | text   | "Term B - 52"    | gate description    |
-| `status`          | text   | "on time"    | flight status    |
+| `title`         | text   | ""    | Title    |
+| `subtitle`          | text   | ""    | Subtitle    |
 
 
 ## Getting started
 ```
-  git clone https://github.com/dsplay/template-flight-information.git my-awesome-template
+  git clone https://github.com/MontMor4/template-cotacao-moedas.git my-awesome-template
   cd my-awesome-template
   rm -rf .git
   npm install
